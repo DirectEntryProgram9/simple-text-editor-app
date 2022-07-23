@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="344.0" prefWidth="319.0" style="-fx-background-color: #EAFAF9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutFormController">
+<AnchorPane fx:id="pneAboutForm" prefHeight="344.0" prefWidth="319.0" style="-fx-background-color: #EAFAF9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutFormController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="85.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
