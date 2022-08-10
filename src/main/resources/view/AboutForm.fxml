@@ -4,6 +4,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="pneAboutForm" prefHeight="344.0" prefWidth="319.0" style="-fx-background-color: #EAFAF9;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutFormController">
@@ -13,13 +14,41 @@
             <Image url="@../image/logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="80.0" layoutY="203.0" text="DEP-9 Text Editor">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="143.0" layoutY="238.0" text="v1.0.0" />
-      <Label layoutX="42.0" layoutY="275.0" text="Simple Java FX Text Editor. Just for fun !" />
-      <Label layoutX="26.0" layoutY="312.0" text="Copyright © 2022 DEP9. All Rights Reserved." />
+      <FlowPane alignment="CENTER" layoutX="80.0" layoutY="203.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="DEP-9 Text Editor">
+               <font>
+                  <Font name="Cantarell Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER" layoutX="143.0" layoutY="238.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="v1.0.0">
+               <font>
+                  <Font name="Cantarell Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER" layoutY="284.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="Simple Java FX Text Editor. Just for fun !">
+               <font>
+                  <Font name="Cantarell Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER" layoutX="26.0" layoutY="312.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="Copyright © 2022 DEP9. All Rights Reserved.">
+               <font>
+                  <Font name="Cantarell Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
    </children>
 </AnchorPane>

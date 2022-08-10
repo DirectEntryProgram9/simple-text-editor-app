@@ -44,7 +44,9 @@ public class SplashScreenFormController {
                     Scene scene = new Scene(root);
                     Stage stage = new Stage();
                     stage.setScene(scene);
-                    stage.setTitle("Text Editor");
+                    stage.setMinWidth(700);
+                    stage.setMinHeight(400);
+                    stage.setTitle("Simple Text Editor");
                     stage.sizeToScene();
                     stage.centerOnScreen();
                     stage.show();

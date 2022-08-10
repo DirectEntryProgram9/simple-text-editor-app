@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXTextArea;
+import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,10 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import java.io.*;
 import java.net.URL;
 
@@ -32,6 +36,10 @@ public class TextEditorFormController {
     public MenuItem mnuAbout;
 
     public void initialize() {
+        FadeTransition fd = new FadeTransition(Duration.millis(1500),pneContainer);
+        fd.setFromValue(0);
+        fd.setToValue(1);
+        fd.playFromStart();
     }
 
     public void mnuNew_OnAction(ActionEvent actionEvent) {
@@ -118,14 +126,65 @@ public class TextEditorFormController {
         Platform.exit();
     }
 
+    public void mnuCut_OnAction(ActionEvent actionEvent) {
+        if (txtEditor.getSelectedText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR,"First select a text to cut!").showAndWait();
+            txtEditor.requestFocus();
+            return;
+        }
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        String segment = txtEditor.getSelectedText();
+        content.putString(segment);
+        clipboard.setContent(content);
+
+        String text = txtEditor.getText();
+        int startIndex = text.indexOf(segment);
+        int endIndex = text.indexOf(segment)+segment.length();
+        String subOne = text.substring(0,startIndex);
+        String subTwo = text.substring(endIndex);
+        txtEditor.setText(subOne+subTwo);
+    }
+
+    public void mnuCopy_OnAction(ActionEvent actionEvent) {
+        if (txtEditor.getSelectedText().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR,"First select a text to copy!").showAndWait();
+            txtEditor.requestFocus();
+            return;
+        }
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        String text = txtEditor.getSelectedText();
+        ClipboardContent content = new ClipboardContent();
+        content.putString(text);
+        clipboard.setContent(content);
+    }
+
+    public void mnuPaste_OnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void mnuSelectAll_OnAction(ActionEvent actionEvent) {
+        txtEditor.selectAll();
+    }
+
     public void mnuAbout_OnAction(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("/view/AboutForm.fxml"));
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setTitle("About");
+        stage.setResizable(false);
+        stage.setTitle("About DEP-9 Text Editor");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    public void cut() {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        String text = txtEditor.getSelectedText();
+        content.putString(text);
+        clipboard.setContent(content);
+        txtEditor.getSelectedText().replace(text,"");
     }
 }

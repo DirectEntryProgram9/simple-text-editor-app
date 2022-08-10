@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pneContainer" prefHeight="373.0" prefWidth="705.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TextEditorFormController">
+<AnchorPane fx:id="pneContainer" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TextEditorFormController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -49,25 +49,25 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem fx:id="mnuCut" mnemonicParsing="false" text="Cut">
+              <MenuItem fx:id="mnuCut" mnemonicParsing="false" onAction="#mnuCut_OnAction" text="Cut">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="mnuCopy" mnemonicParsing="false" text="Copy">
+                  <MenuItem fx:id="mnuCopy" mnemonicParsing="false" onAction="#mnuCopy_OnAction" text="Copy">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="mnuPaste" mnemonicParsing="false" text="Paste">
+                  <MenuItem fx:id="mnuPaste" mnemonicParsing="false" onAction="#mnuPaste_OnAction" text="Paste">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="mnuSelectAll" mnemonicParsing="false" text="Select All">
+                  <MenuItem fx:id="mnuSelectAll" mnemonicParsing="false" onAction="#mnuSelectAll_OnAction" text="Select All">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -84,7 +84,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuBar>
-      <JFXTextArea fx:id="txtEditor" focusColor="#1e8edd" layoutX="14.0" layoutY="39.0" prefHeight="190.0" prefWidth="658.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: black; -fx-border-radius: 5; -fx-padding: 5;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+      <JFXTextArea fx:id="txtEditor" focusColor="#1e8edd" layoutX="14.0" layoutY="39.0" prefHeight="190.0" prefWidth="658.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: lightgrey; -fx-border-width: 5; -fx-border-radius: 5; -fx-padding: 5;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
          <font>
             <Font name="Cantarell Regular" size="16.0" />
          </font></JFXTextArea>

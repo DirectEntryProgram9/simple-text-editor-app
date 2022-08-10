@@ -2,11 +2,14 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
+import javafx.util.Duration;
+
 import java.io.*;
 import java.util.Optional;
 
@@ -20,6 +23,12 @@ public class SaveFormController {
     private String content;
     private File file;
 
+    public void initialize() {
+        FadeTransition fd = new FadeTransition(Duration.millis(1500),pneSaveForm);
+        fd.setFromValue(0);
+        fd.setToValue(1);
+        fd.playFromStart();
+    }
     public void setData(String editorContent) {
         content = editorContent;
     }
@@ -75,7 +84,9 @@ public class SaveFormController {
     private boolean isName(String input) {
         char[] chars = input.toCharArray();
         for (char aChar : chars) {
-            if (!Character.isLetter(aChar) && aChar != ' ') return false;
+            if (!Character.isLetter(aChar) && (!Character.isDigit(aChar)) && aChar != ' ' && aChar != '-') {
+                return false;
+            }
         }
         return true;
     }

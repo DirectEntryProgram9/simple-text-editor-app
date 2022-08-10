@@ -22,8 +22,11 @@ The main key features of the **DEP-9** text editor as follows,
 ## About Text-Editor Application
 ![](asset/About.png)
 
+## Save Modal Window
+![](asset/Save-modal-window.png)
+
 ## Text Editor User Interface
-![](asset/Text-Editor.png)
+![](asset/Text-editor.png)
 
 ### Version
 v1.0.0
