@@ -1,5 +1,6 @@
 package controller;
 
+import com.jfoenix.controls.JFXTextArea;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,7 +15,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class TextEditorFormController {
-    public HTMLEditor txtEditor;
+    public JFXTextArea txtEditor;
     public MenuItem mnuNew;
     public MenuItem mnuOpen;
     public MenuItem mnuSave;
@@ -30,7 +31,7 @@ public class TextEditorFormController {
         mnuNew.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                txtEditor.setHtmlText("");
+                txtEditor.setText("");
             }
         });
         mnuClose.setOnAction(new EventHandler<ActionEvent>() {
