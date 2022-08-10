@@ -10,37 +10,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="373.0" prefWidth="705.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TextEditorFormController">
+<AnchorPane fx:id="pneContainer" prefHeight="373.0" prefWidth="705.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TextEditorFormController">
    <children>
-      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="mnuNew" mnemonicParsing="false" text="New">
+              <MenuItem fx:id="mnuNew" mnemonicParsing="false" onAction="#mnuNew_OnAction" text="New">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="mnuOpen" mnemonicParsing="false" text="Open">
+                  <MenuItem fx:id="mnuOpen" mnemonicParsing="false" onAction="#mnuOpen_OnAction" text="Open">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="mnuSave" mnemonicParsing="false" text="Save">
+                  <MenuItem fx:id="mnuSave" mnemonicParsing="false" onAction="#mnuSave_OnAction" text="Save">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="mnuPrint" mnemonicParsing="false" text="Print">
+                  <MenuItem fx:id="mnuPrint" mnemonicParsing="false" onAction="#mnuPrint_OnAction" text="Print">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem fx:id="mnuClose" mnemonicParsing="false" text="Close">
+                  <MenuItem fx:id="mnuClose" mnemonicParsing="false" onAction="#mnuClose_OnAction" text="Close">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -76,7 +76,7 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem fx:id="mnuAbout" mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="mnuAbout" mnemonicParsing="false" onAction="#mnuAbout_OnAction" text="About" />
             </items>
           </Menu>
         </menus>
@@ -84,9 +84,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </MenuBar>
-      <JFXTextArea fx:id="txtEditor" focusColor="#1e8edd" layoutX="14.0" layoutY="39.0" prefHeight="190.0" prefWidth="658.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: black; -fx-border-radius: 5; -fx-padding: 5;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+      <JFXTextArea fx:id="txtEditor" focusColor="#1e8edd" layoutX="14.0" layoutY="39.0" prefHeight="190.0" prefWidth="658.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: black; -fx-border-radius: 5; -fx-padding: 5;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
          <font>
-            <Font name="Cantarell Regular" size="14.0" />
+            <Font name="Cantarell Regular" size="16.0" />
          </font></JFXTextArea>
    </children>
 </AnchorPane>

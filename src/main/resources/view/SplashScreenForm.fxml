@@ -20,13 +20,19 @@
                   <Image url="@../image/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="105.0" layoutY="14.0" style="-fx-text-fill: #4F419E;" text="DEP-9 Text Editor">
+            <Label layoutX="105.0" layoutY="14.0" style="-fx-text-fill: #4F419E;" text="DEP-9 Text Editor" AnchorPane.leftAnchor="100.0">
                <font>
-                  <Font size="22.0" />
+                  <Font name="Cantarell Bold" size="22.0" />
                </font>
             </Label>
-            <Label fx:id="lblStatus" layoutX="105.0" layoutY="47.0" prefHeight="18.0" prefWidth="179.0" style="-fx-padding: 5 0 0 0;" />
-            <Label layoutX="10.0" layoutY="93.0" text="Copyright © 2022 DEP9. All Rights Reserved. " />
+            <Label fx:id="lblStatus" layoutX="105.0" layoutY="47.0" prefHeight="18.0" prefWidth="179.0" style="-fx-padding: 5 0 0 0;" AnchorPane.leftAnchor="100.0">
+               <font>
+                  <Font name="Cantarell Bold" size="14.0" />
+               </font></Label>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="93.0" text="Copyright © 2022 DEP9. All Rights Reserved. " AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="Cantarell Bold" size="13.0" />
+               </font></Label>
          </children>
       </AnchorPane>
    </children>
